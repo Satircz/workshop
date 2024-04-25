@@ -13,9 +13,7 @@ def guessing_game():
         except ValueError:
             print("is not a number, guess number again!")
             continue
-"""
-zjistí, zda je číslo int. pokud ne, vrátí nás k zadání čísla
-"""
+
         print(f"Your guessed number is {guess_number}.")
         if guess_number < random_number:
             print("Too small!, try again!")
@@ -42,5 +40,5 @@ zjistí, zda je číslo int. pokud ne, vrátí nás k zadání čísla
                     print("invalid input, please input Y or N")
                     continue
 
-guessing_game()
 
+guessing_game()
