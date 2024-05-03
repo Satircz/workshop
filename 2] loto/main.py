@@ -1,8 +1,7 @@
 import random
 
-print("Welcome in LOTTO GAME")
-name = input("Enter your name: ")
-print(f"Hi {name}, you need to choose 6 numbers from 1 to 49. Can you guess all 6?")
+
+
 
 def guess_numbers() -> object:
     user_numbers = []
@@ -23,22 +22,27 @@ def guess_numbers() -> object:
         user_numbers.sort()
     return user_numbers
 
-print(guess_numbers())
+
 def lotto():
-    return sorted(random.sample(range(1, 50), 6))
+    lotto_numbers = sorted(random.sample(range(1, 50), 6))
+    return lotto_numbers
 
-print(lotto())
 
-# user_ressult = guess_numbers()
-# lotto_ressult = lotto()
-#
-# def ressult():
-#     matched_numbers: int = 0
-#     for num in user_ressult:
-#         if num in lotto_ressult:
-#             matched_numbers += 1
-#     return matched_numbers
-#
-# ressult(user_ressult, lotto_ressult)
-# print(ressult)
+def result():
+    user_numbers = guess_numbers()
+    print(f"User Numbers: {user_numbers}")
+    lotto_numbers = lotto()
+    print(f"LOTTO Numbers: {lotto_numbers}")
+    matched_numbers: int = 0
+    for num in user_numbers:
+        if num in lotto_numbers:
+            matched_numbers += 1
+    return f"You get {matched_numbers} from {lotto_numbers}"
+
+
+if __name__ == "__main__":
+    print("Welcome in LOTTO GAME")
+    name = input("Enter your name: ")
+    print(f"Hi {name}, you need to choose 6 numbers from 1 to 49. Can you guess all 6?")
+    print(result())
 
