@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>guess the number</title>
+</head>
+<body>
+    <h1>Its a number {{new_guess}} ?</h1>
+    <form action="/" method="POST">
+        <input type="submit" name="user_input" value="too big">
+        <input type="submit" name="user_input" value="too small">
+        <input type="submit" name="user_input" value="you win">
+        <input type="hidden" name="min_guess" value="{{min_guess}}">
+        <input type="hidden" name="max_guess" value="{{max_guess}}">
+        <input type="hidden" name="new_guess" value="{{new_guess}}">
+    </form>
+</body>
+</html>
